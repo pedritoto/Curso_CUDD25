@@ -1,2 +1,2 @@
 # Curso_CUDD25
-$\int sin(x) dx = -cos(x)+C
+## Repositorio para el curso CUDD 2025
