@@ -6,7 +6,7 @@ option = st.selectbox("Video o foto?",(None,"Video", "foto"))
 
 if option=='Video':
   st.video(data)  
-else:
+elif option='foto':
   bt=st.button("Click si estás seguro que elegiste foto")
   if bt:
     st.image('par1.png')
