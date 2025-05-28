@@ -2,7 +2,7 @@ import streamlit as st
 st.title("Mi primer App")
 data='https://youtu.be/VbXEc9vpeIM?si=fhfqG-flXoE8Hzb1'
 
-option = st.selectbox("Video o foto?",("Video", "foto"))
+option = st.selectbox("Video o foto?",(None,"Video", "foto"))
 
 if option=='Video':
   st.video(data)  
