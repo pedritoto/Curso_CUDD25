@@ -12,7 +12,7 @@ prompt = st.chat_input("What is up?")
 if prompt==None:
    st.stop()
 
-with st.chat_message("user",avatar="$\int_0^\pi sin(x) dx$"):
+with st.chat_message("user",avatar="$$\int_0^\pi sin(x) dx$$"):
    st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
