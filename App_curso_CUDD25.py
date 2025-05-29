@@ -24,7 +24,7 @@ st.title("💬 Mini Chatbot (enfadoso)")
 # Entrada tipo chat (abajo de la pantalla)
 user_input = st.chat_input("Escribe algo...")
 aux=user_input
-user_input=aux[-1:0]
+aux[1]
 # Si el usuario escribe algo, mostramos los mensajes
 if user_input:
     # Mostrar el mensaje del usuario
