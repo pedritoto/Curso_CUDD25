@@ -13,7 +13,7 @@ if prompt==None:
    st.stop()
 
 with st.chat_message("user",avatar=":rage2:"):
-#   st.markdown(prompt)
+   st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
 
