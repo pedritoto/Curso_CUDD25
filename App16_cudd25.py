@@ -8,7 +8,10 @@ openai_api_key = st.secrets["api_key"]
 # Create an OpenAI client.
 client = OpenAI(api_key=openai_api_key)
 
+
+contexto = "Curso de machine learning"  
 prompt = st.chat_input("What is up?")
+promptfinal=contexto+prompt
 if prompt==None:
    st.stop()
 
@@ -21,7 +24,7 @@ stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
             {"role": "system", "content": "You are an assistant."},
-            {"role": "user", "content": prompt}
+            {"role": "user", "content": promptfinal}
         ],
         max_tokens=800,
         temperature=0,
