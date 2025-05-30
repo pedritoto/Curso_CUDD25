@@ -16,6 +16,9 @@ if archivo is None:
     st.info("💡 Esperando archivo...")
     st.stop()
 
+
+if "messages" not in st.session_state:
+        st.session_state.messages = []
 contexto_local = archivo.read().decode("utf-8")  
 #txt="What is up?"#+contexto
 prompt = st.chat_input("que onda")
