@@ -21,7 +21,7 @@ if "messages" not in st.session_state:
         st.session_state.messages = []
 contexto_local = archivo.read().decode("utf-8")  
 #txt="What is up?"#+contexto
-prompt = st.chat_input("que onda")
+#prompt = st.chat_input("que onda")
 #promptfinal=contexto+prompt
 
 
