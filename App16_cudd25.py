@@ -15,11 +15,11 @@ st.sidebar.markdown("""### Autor: Juan Pedro Palomares Báez
 if archivo is None:
     st.info("💡 Esperando archivo...")
     st.stop()
-
+contexto_local = archivo.read().decode("utf-8")  
 
 if "messages" not in st.session_state:
-        st.session_state.messages = []
-contexto_local = archivo.read().decode("utf-8")  
+   st.session_state.messages = []
+
 #txt="What is up?"#+contexto
 #prompt = st.chat_input("que onda")
 #promptfinal=contexto+prompt
@@ -41,22 +41,19 @@ if promt := st.chat_input("What is up?"):
    st.session_state.messages.append({"role": "user", "content": prompt})
    with st.chat_message("user"):
       st.markdown(prompt)
+
+
    stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
-            ],
-         #   {"role": "system", "content": f"""Eres un asistente que actúa como H. P Lovecraft, 
-         #   y debes usar el siguiente contexto:\n\n {contexto_local}"""},
-         #  {"role": "user", "content": prompt}
-        #],
+                 ],
         sttream=True,
         max_tokens=800,
         temperature=0,
-    )
-   respuesta = stream.choices[0].message.content
-
+        )    
+ 
    with st.chat_message("assistant"):
-    st.write(respuesta)
+      st.write(respuesta)
    st.session_state.messages.append({"role": "assistant", "content": respuesta})
