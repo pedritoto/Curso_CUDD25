@@ -10,7 +10,8 @@ client = OpenAI(api_key=openai_api_key)
 
 archivo = st.sidebar.file_uploader("Sube un archivo .txt con el contexto",type='txt')
 st.sidebar.image("https://images.seeklogo.com/logo-png/5/1/facultad-de-ciencias-quimicas-logo-png_seeklogo-51591.png")
-
+st.sidebar.markdown("""## Autor: Juan Pedro Palomares Báez]
+$\int$""")
 if archivo is None:
     st.info("💡 Esperando archivo...")
     st.stop()
