@@ -9,9 +9,9 @@ openai_api_key = st.secrets["api_key"]
 client = OpenAI(api_key=openai_api_key)
 
 
-contexto = "edificios naranja derrumbados, papas, tomates, fresas, plátanos. lechugas"  
-txt="What is up?"#+contexto
-prompt = st.chat_input(txt)
+#contexto = "edificios naranja derrumbados, papas, tomates, fresas, plátanos. lechugas"  
+#txt="What is up?"#+contexto
+prompt = st.chat_input("que onda")
 #promptfinal=contexto+prompt
 if prompt==None:
    st.stop()
