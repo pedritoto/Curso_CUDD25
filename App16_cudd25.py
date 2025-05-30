@@ -34,7 +34,7 @@ for message in st.session_state.messages:
 # Generate a response using the OpenAI API.
 
 
-if promt := st.chat_input("What is up?"):
+if prompt := st.chat_input("What is up?"):
 
 
    # Store and display the current prompt.
