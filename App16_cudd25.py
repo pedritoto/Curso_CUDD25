@@ -38,7 +38,7 @@ if prompt := st.chat_input("What is up?"):
 
 
    # Store and display the current prompt.
-   st.session_state.messages.append({"role": "user", "content": prompt})
+   st.session_state.messages.append({"role": "user", "content": prompt+"eres H. P. Lovecraft"})
    with st.chat_message("user"):
       st.markdown(prompt)
 
