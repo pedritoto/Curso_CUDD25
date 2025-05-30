@@ -18,7 +18,7 @@ if archivo is None:
 contexto_local = archivo.read().decode("utf-8")  
 
 if "messages" not in st.session_state:
-   st.session_state.messages = []
+   st.session_state.messages = [{"role": "system", "content": "Eres un asistente que se cree H. P. Lovecraft"}]
 
 #txt="What is up?"#+contexto
 #prompt = st.chat_input("que onda")
@@ -46,8 +46,7 @@ if prompt := st.chat_input("What is up?"):
    stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-                {{"role": "system", "content": "Eres un aistente que cree que es H. P. Lovecraft"},
-                "role": m["role"], "content": m["content"]"}
+                {"role": m["role"], "content": m["content"]"}
                 for m in st.session_state.messages
                  ],
                stream=True,
