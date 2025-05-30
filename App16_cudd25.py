@@ -28,7 +28,7 @@ if prompt==None:
 
 for message in st.session_state.messages:
    with st.chat_message(message["role"]):
-   st.markdown(message["user",avatar="😾","content"])
+      st.markdown(message["user",avatar="😾","content"])
 #with st.chat_message("user",avatar="😾"):
 #   st.markdown(prompt)
 
