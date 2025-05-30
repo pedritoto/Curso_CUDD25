@@ -38,7 +38,7 @@ if prompt := st.chat_input("What is up?"):
 
 
    # Store and display the current prompt.
-   st.session_state.messages.append({"role": "user", "content": prompt+"eres H. P. Lovecraft"})
+   st.session_state.messages.append({"role": "user", "content": prompt})
    with st.chat_message("user"):
       st.markdown(prompt)
 
@@ -46,7 +46,7 @@ if prompt := st.chat_input("What is up?"):
    stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-                {"role": m["role"], "content": m["content"]}
+                {"role": m["role"], "content": m["content"]+"You are like H. P. Lovecraft."}
                 for m in st.session_state.messages
                  ],
                stream=True,
