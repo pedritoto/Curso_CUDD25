@@ -8,8 +8,8 @@ openai_api_key = st.secrets["api_key"]
 # Create an OpenAI client.
 client = OpenAI(api_key=openai_api_key)
 
-
-#contexto = "edificios naranja derrumbados, papas, tomates, fresas, plátanos. lechugas"  
+archivo = st.file_uploader("Sube un archivo .txt con el contexto",)
+contexto_local = archivo.read().decode("utf-8")  
 #txt="What is up?"#+contexto
 prompt = st.chat_input("que onda")
 #promptfinal=contexto+prompt
@@ -24,7 +24,8 @@ with st.chat_message("user",avatar="😾"):
 stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-            {"role": "system"+contexto, "content": "You are an assistant that acts like H. P Lovecraft."},
+            {"role": "system", "content": f"""Eres un asistente que actúa como H. P Lovecraft, 
+            y debes usar el siguiente contexto:\n\n {contexto_local}"""},
             {"role": "user", "content": prompt}
         ],
         max_tokens=800,
