@@ -50,7 +50,7 @@ if prompt := st.chat_input("What is up?"):
                 for m in st.session_state.messages
                  ],
         stream=True,
-        Temperature=0,
+        temperature=0,
         )    
  
    with st.chat_message("assistant"):
