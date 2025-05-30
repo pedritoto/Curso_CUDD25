@@ -46,7 +46,8 @@ if prompt := st.chat_input("What is up?"):
    stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-                {"role": m["role"], "content": m["content"]+"You are like H. P. Lovecraft."}
+                {{"role": "system", "content": "Eres un aistente que cree que es H. P. Lovecraft"},
+                "role": m["role"], "content": m["content"]"}
                 for m in st.session_state.messages
                  ],
                stream=True,
