@@ -49,10 +49,7 @@ if prompt := st.chat_input("What is up?"):
                 {"role": m["role"], "content": m["content"]}
                 for m in st.session_state.messages
                  ],
-        sttream=True,
-        max_tokens=800,
-        temperature=0,
-        )    
+        sttream=True,)    
  
    with st.chat_message("assistant"):
       st.write(respuesta)
