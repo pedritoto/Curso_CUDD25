@@ -10,7 +10,7 @@ client = OpenAI(api_key=openai_api_key)
 
 
 contexto = "edificios naranja derrumbados, papas, tomates, fresas, plátanos. lechugas"  
-txt="What is up?"+contexto
+txt="What is up?"#+contexto
 prompt = st.chat_input(txt)
 #promptfinal=contexto+prompt
 if prompt==None:
