@@ -23,8 +23,7 @@ contexto_local = archivo.read().decode("utf-8")
 #txt="What is up?"#+contexto
 prompt = st.chat_input("que onda")
 #promptfinal=contexto+prompt
-if prompt==None:
-   st.stop()
+
 
 for message in st.session_state.messages:
    with st.chat_message(message["role"]):
@@ -34,18 +33,30 @@ for message in st.session_state.messages:
 
 # Generate a response using the OpenAI API.
 
-stream = client.chat.completions.create(
+
+if promt := st.chat_input("What is up?"):
+
+
+   # Store and display the current prompt.
+   st.session_state.messages.append({"role": "user", "content": prompt})
+   with st.chat_message("user"):
+      st.markdown(prompt)
+   stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-            {"role": "system", "content": f"""Eres un asistente que actúa como H. P Lovecraft, 
-            y debes usar el siguiente contexto:\n\n {contexto_local}"""},
-            {"role": "user", "content": prompt}
-        ],
+                {"role": m["role"], "content": m["content"]}
+                for m in st.session_state.messages
+            ],
+         #   {"role": "system", "content": f"""Eres un asistente que actúa como H. P Lovecraft, 
+         #   y debes usar el siguiente contexto:\n\n {contexto_local}"""},
+         #  {"role": "user", "content": prompt}
+        #],
+        sttream=True,
         max_tokens=800,
         temperature=0,
     )
-respuesta = stream.choices[0].message.content
+   respuesta = stream.choices[0].message.content
 
-with st.chat_message("assistant"):
-   st.write(respuesta)
-st.session_state.messages.append({"role": "assistant", "content": respuesta})
+   with st.chat_message("assistant"):
+    st.write(respuesta)
+   st.session_state.messages.append({"role": "assistant", "content": respuesta})
