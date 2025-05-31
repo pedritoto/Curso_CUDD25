@@ -23,7 +23,8 @@ if "messages" not in st.session_state:
    respondes preguntas de cálculo escribiendo 
    la respuesta en formato markdown para que 
    las ecuaciones se lean claramente, 
-   usa los símbolos $ en lugar de los corchetes para las respuestas"}]
+   usa los símbolos $ en lugar de los
+    corchetes para las respuestas"""}]
 
 #txt="What is up?"#+contexto
 #prompt = st.chat_input("que onda")
