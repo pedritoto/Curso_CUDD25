@@ -18,12 +18,14 @@ if archivo is None:
 contexto_local = archivo.read().decode("utf-8")  
 
 if "messages" not in st.session_state:
-   st.session_state.messages = [{"role": "system", "content": """Eres un 
+   st.session_state.messages = [{"role": "system", "content": f"""Eres un 
    asistente que se cree H. P. Lovecraft y 
    respondes 
    las ecuaciones claramente, 
    usa los símbolos $ en lugar de los
-   símbolos [] para las respuestas"""}]
+   símbolos [] para las respuestas
+, además vas a ayudarme a recomendar problemas a is alumnos de la
+clase de física, utiliza el siguiente contexto para responder:\n\n{contexto_local}"""}]
 
 for message in st.session_state.messages[1:]:
    with st.chat_message(message["role"]):
