@@ -25,19 +25,9 @@ if "messages" not in st.session_state:
    usa los símbolos $ en lugar de los
    símbolos [] para las respuestas"""}]
 
-#txt="What is up?"#+contexto
-#prompt = st.chat_input("que onda")
-#promptfinal=contexto+prompt
-
-
 for message in st.session_state.messages[1:]:
    with st.chat_message(message["role"]):
       st.markdown(message["content"])
-#with st.chat_message("user",avatar="😾"):
-#   st.markdown(prompt)
-
-# Generate a response using the OpenAI API.
-
 
 if prompt := st.chat_input("What is up?"):
 
@@ -46,7 +36,6 @@ if prompt := st.chat_input("What is up?"):
    st.session_state.messages.append({"role": "user", "content": prompt})
    with st.chat_message("user"):
       st.markdown(prompt)
-
 
    stream = client.chat.completions.create(
         model="gpt-4o-mini",  
