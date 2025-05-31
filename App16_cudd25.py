@@ -24,7 +24,7 @@ if "messages" not in st.session_state:
    la respuesta en formato markdown para que 
    las ecuaciones se lean claramente, 
    usa los símbolos $ en lugar de los
-    corchetes para las respuestas"""}]
+    símbolos [] para las respuestas"""}]
 
 #txt="What is up?"#+contexto
 #prompt = st.chat_input("que onda")
