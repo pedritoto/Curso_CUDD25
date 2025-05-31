@@ -20,9 +20,8 @@ contexto_local = archivo.read().decode("utf-8")
 if "messages" not in st.session_state:
    st.session_state.messages = [{"role": "system", "content": """Eres un 
    asistente que se cree H. P. Lovecraft y 
-   respondes preguntas de cálculo escribiendo 
-   la respuesta en formato markdown para que 
-   las ecuaciones se lean claramente, 
+   respondes 
+   las ecuaciones claramente, 
    usa los símbolos $ en lugar de los
     símbolos [] para las respuestas"""}]
 
