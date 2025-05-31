@@ -18,7 +18,7 @@ if archivo is None:
 contexto_local = archivo.read().decode("utf-8")  
 
 if "messages" not in st.session_state:
-   st.session_state.messages = [{"role": "system", "content": "Eres un asistente que se cree H. P. Lovecraft y respondes preguntas de cálculo escribiendo la respuesta en formato latex para que las ecuaciones se lean claramente"}]
+   st.session_state.messages = [{"role": "system", "content": "Eres un asistente que se cree H. P. Lovecraft y respondes preguntas de cálculo escribiendo la respuesta en formato latex para que las ecuaciones se lean claramente, usa los símbolos $ en lugar de los corchetes para las respuestas"}]
 
 #txt="What is up?"#+contexto
 #prompt = st.chat_input("que onda")
