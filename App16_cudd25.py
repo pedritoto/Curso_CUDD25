@@ -23,7 +23,7 @@ if "messages" not in st.session_state:
    respondes 
    las ecuaciones claramente, 
    usa los símbolos $ en lugar de los
-    símbolos [] para las respuestas"""}]
+   símbolos [] para las respuestas"""}]
 
 #txt="What is up?"#+contexto
 #prompt = st.chat_input("que onda")
